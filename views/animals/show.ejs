@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
   <title>Animal Show Page!</title>
 </head>
 <body>
@@ -11,6 +12,10 @@
   <h2>Animal #<%= animal._id %></h2>
   <h3><%= animal.name %></h3>
   <p>Says: <%= animal.says %></p>
+  <form action="/animals/<%= animal._id %>?_method=DELETE" class="delete-form" method="POST">
+    <button type="submit">X</button>
+  </form>
+  <br>
   <a href="/animals">Go Back</a>
 </body>
 </html>

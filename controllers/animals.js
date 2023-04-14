@@ -18,7 +18,6 @@ function newAnimal(req, res) {
 }
 
 function create(req, res) {
-  console.log(req.body)
   req.body.done = false
   Animal.create(req.body)
   .then(animal => {
@@ -30,13 +29,22 @@ function create(req, res) {
 }
 
 function show(req, res) {
-  console.log(req.params.animalId);
   Animal.findById(req.params.animalId)
   .then(animal => {
-    console.log(animal);
     res.render('animals/show', {
       animal: animal,
     })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/animals')
+  })
+}
+
+function deleteAnimal(req, res) {
+  Animal.findByIdAndDelete(req.params.animalId)
+  .then(animal => {
+    res.redirect('/animals')
   })
   .catch(error => {
     console.log(error)
@@ -49,4 +57,5 @@ export {
   newAnimal as new,
   create,
   show,
+  deleteAnimal as delete
 }

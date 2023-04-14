@@ -4,13 +4,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
   <title>New Animal</title>
 </head>
 <body>
   <h1>New Animal</h1>
   <form action="/animals" method="POST" autocomplete="off">
-    <input type="text" name="name">
-    <input type="text" name="says">
+    <label>Name:
+      <input type="text" name="name">
+    </label>
+    <br>
+    <label>Says:
+      <input type="text" name="says">
+    </label>
+    <br>
     <button type="submit">Save Animal</button>
   </form>
 </body>

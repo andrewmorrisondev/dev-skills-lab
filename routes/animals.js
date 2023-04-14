@@ -15,4 +15,7 @@ router.get('/:animalId', animalsCtrl.show)
 // POST localhost:3000/animals
 router.post('/', animalsCtrl.create)
 
+// DELETE localhost:3000/animals/:animalId
+router.delete('/:animalId', animalsCtrl.delete)
+
 export { router }
